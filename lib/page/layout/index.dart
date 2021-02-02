@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:netease/common/style/icon_font.dart';
 import 'package:netease/page/home/index.dart';
 import 'package:netease/page/player/index.dart';
+import 'package:netease/store/NavbarProvider.dart';
 import 'package:netease/widgets/netease_play_bar.dart';
 
 import 'package:netease/common/extension/num_fit.dart';
+import 'package:provider/provider.dart';
 
 Widget buildView(BuildContext context){
-  ValueNotifier<int> state = ValueNotifier<int>(0);
+  var state = context.watch<NavbarProvider>();
   BottomNavigationBarItem _buildBottomNavigationBarItem(IconData iconData, String itemText) {
     return BottomNavigationBarItem(
       activeIcon: Container(
@@ -55,13 +57,13 @@ Widget buildView(BuildContext context){
 
   _changePage(int index) {
     /*如果点击的导航项不是当前项  切换 */
-    if (index != state.value) {
-      state.value = index;
+    if (index != state.index) {
+      state.change(index);
     }
   }
 
   return Scaffold(
-    body: pages[state.value],
+    body: pages[state.index],
     bottomNavigationBar: Container(
       height: 140.2.rpx,
       decoration: BoxDecoration(
@@ -90,7 +92,7 @@ Widget buildView(BuildContext context){
               elevation: 0.0,
               backgroundColor: Color.fromRGBO(255, 255, 255, 1),
               items: bottomNavItems,
-              currentIndex: state.value,
+              currentIndex: state.index,
               type: BottomNavigationBarType.fixed,
               onTap: (index) {
                 _changePage(index);

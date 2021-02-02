@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netease/common/style/icon_font.dart';
+import 'package:netease/store/FacadeProvider.dart';
+import 'package:netease/utils/picture_util.dart';
 import 'package:netease/widgets/netease_carousel.dart';
 import 'package:netease/widgets/netease_item.dart';
 import 'package:netease/widgets/netease_scroll.dart';
 import 'package:netease/widgets/netease_search.dart';
+import 'package:provider/provider.dart';
 
 import 'package:netease/common/extension/num_fit.dart';
 
@@ -14,15 +17,28 @@ class HomeFacade extends StatefulWidget {
 }
 
 class _HomeFacadeState extends State<HomeFacade> {
+
+  int _pictureIndex = 0;
+  List<int> rgb = [255, 255, 255];
+  Future<List<int>> _picColorPick(String picUrl) async{
+    List<int> res = await PictureUtil.picColorPick(picUrl);
+    setState(() {
+      rgb = res;
+    });
+    return rgb;
+  }
+
   @override
   Widget build(BuildContext context) {
+    var state = context.watch<FacadeProvider>();
+    _picColorPick(state.pictures[_pictureIndex]);
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color.fromRGBO(235, 243, 245, 1),
+            Color.fromRGBO(rgb[0], rgb[1], rgb[2], 0.5),
             Color.fromRGBO(255, 255, 255, 1),
             Color.fromRGBO(255, 255, 255, 1),
           ],
@@ -40,16 +56,22 @@ class _HomeFacadeState extends State<HomeFacade> {
             height: 220,
             padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 5.rpx),
             child: NeteaseCarousel(
-              itemCount: 3,
+              autoplay: true,
+              itemCount: state.pictures.length,
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusDirectional.circular(15.rpx)),
                 clipBehavior: Clip.antiAlias,
-                child: Image.asset(
-                  'lib/assets/image/carousel-1.png',
-                  fit: BoxFit.fitWidth,
-                ),
+                child: Image.asset(state.pictures[_pictureIndex], fit: BoxFit.fitWidth),
               ),
+              pictureIndex: (val, min) {
+                /// 这里要延时加载  否则会抱The widget on which setState() or markNeedsBuild() was called was:错误
+                Future.delayed(Duration(milliseconds: min)).then((e) {
+                  setState(() {
+                    _pictureIndex = val;
+                  });
+                });
+              },
             ),
           ),
           Container(
