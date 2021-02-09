@@ -8,7 +8,8 @@ import 'package:netease/store/NavbarProvider.dart';
 import 'package:provider/provider.dart';
 
 Widget createApp() {
-  return MultiProvider(
+  return
+    MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => NavbarProvider()),
       ChangeNotifierProvider(create: (_) => FacadeProvider()),

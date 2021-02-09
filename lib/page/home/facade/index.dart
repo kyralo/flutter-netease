@@ -17,14 +17,15 @@ class HomeFacade extends StatefulWidget {
 }
 
 class _HomeFacadeState extends State<HomeFacade> {
-
   int _pictureIndex = 0;
   List<int> rgb = [255, 255, 255];
   Future<List<int>> _picColorPick(String picUrl) async{
     List<int> res = await PictureUtil.picColorPick(picUrl);
-    setState(() {
-      rgb = res;
-    });
+    if(mounted){
+      setState(() {
+        rgb = res;
+      });
+    }
     return rgb;
   }
 
@@ -54,7 +55,7 @@ class _HomeFacadeState extends State<HomeFacade> {
           ),
           Container(
             height: 220,
-            padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 5.rpx),
+            padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 0.rpx),
             child: NeteaseCarousel(
               autoplay: true,
               itemCount: state.pictures.length,
@@ -67,16 +68,18 @@ class _HomeFacadeState extends State<HomeFacade> {
               pictureIndex: (val, min) {
                 /// 这里要延时加载  否则会抱The widget on which setState() or markNeedsBuild() was called was:错误
                 Future.delayed(Duration(milliseconds: min)).then((e) {
-                  setState(() {
-                    _pictureIndex = val;
-                  });
+                  if(mounted){
+                    setState(() {
+                      _pictureIndex = val;
+                    });
+                  }
                 });
               },
             ),
           ),
           Container(
             height: 120,
-            padding: EdgeInsets.fromLTRB(15.rpx, 10.rpx, 15.rpx, 0.rpx),
+            padding: EdgeInsets.fromLTRB(10.rpx, 5.rpx, 10.rpx, 0.rpx),
             // decoration: BoxDecoration(
             //   color: Colors.white,
             // ),
@@ -86,22 +89,22 @@ class _HomeFacadeState extends State<HomeFacade> {
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Container(
-                    width: 90.rpx,
+                    width: 100.rpx,
                     alignment: AlignmentDirectional.center,
                     child: NeteaseItem(IconFont.rehin_meirituijian, '每日推荐', 55.rpx),
                   ),
                   Container(
-                    width: 90.rpx,
+                    width: 100.rpx,
                     alignment: AlignmentDirectional.center,
                     child: NeteaseItem(IconFont.rehin_huaban, '私人FM', 35.rpx),
                   ),
                   Container(
-                    width: 90.rpx,
+                    width: 100.rpx,
                     alignment: AlignmentDirectional.center,
                     child: NeteaseItem(IconFont.rehin_gedan, '歌单', 35.rpx),
                   ),
                   Container(
-                    width: 90.rpx,
+                    width: 100.rpx,
                     alignment: AlignmentDirectional.center,
                     child: NeteaseItem(IconFont.rehin_paixingbang, '排行榜', 35.rpx),
                   ),

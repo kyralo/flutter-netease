@@ -5,6 +5,7 @@ import 'package:netease/page/home/ranking/index.dart';
 import 'package:netease/page/home/recomand_playlist/index.dart';
 
 import 'package:netease/common/extension/num_fit.dart';
+import 'package:netease/widgets/netease_scroll.dart';
 
 import 'fm/index.dart';
 
@@ -15,7 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  Color color = Colors.white;
+  Color color = Color.fromRGBO(245,245,245, 1);
 
   @override
   Widget build(BuildContext context) {
@@ -24,28 +25,29 @@ class _HomeState extends State<Home> {
       decoration: BoxDecoration(
         color: color,
       ),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+      child: NeteaseScroll(
+        direction: Axis.vertical,
         child: Column(
           children: <Widget>[
             Container(
               child: HomeFacade(),
             ),
+            SizedBox(height: 1.rpx),
             Container(
-              margin: EdgeInsets.fromLTRB(0.rpx, 1.rpx, 0.rpx, 10.rpx),
               child: HomeRecomandPlaylist(),
             ),
+            SizedBox(height: 10.rpx),
             Container(
-              margin: EdgeInsets.fromLTRB(0.rpx, 1.rpx, 0.rpx, 10.rpx),
               child: HomeFM(),
             ),
+            SizedBox(height: 10.rpx),
             Container(
-              margin: EdgeInsets.fromLTRB(0.rpx, 1.rpx, 0.rpx, 10.rpx),
               child: HomeRanking(),
             ),
+            SizedBox(height: 10.rpx),
           ],
         ),
       ),
-    );;
+    );
   }
 }

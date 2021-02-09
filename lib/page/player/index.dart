@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:netease/widgets/suit_text.dart';
 
 class Player extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class Player extends StatefulWidget {
 class _PlayerState extends State<Player> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: SuitText('something'),
+    );
   }
 }

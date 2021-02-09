@@ -97,47 +97,13 @@ class _HomeFMState extends State<HomeFM> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    NeteaseMusicCardEntry(),
-                    NeteaseMusicCardEntry(),
-                    NeteaseMusicCardEntry(),
+                    NeteaseMusicCardEntry('lib/assets/image/p1.jpg', '空城', ' 杨坤', '就算春去秋来, 你依然是我的挚爱.'),
+                    NeteaseMusicCardEntry('lib/assets/image/p1.jpg', '空城', ' 杨坤', '就算春去秋来, 你依然是我的挚爱.'),
+                    NeteaseMusicCardEntry('lib/assets/image/p1.jpg', '空城', ' 杨坤', '就算春去秋来, 你依然是我的挚爱.'),
                   ],
                 ),
               ),
             ),
-            // child: NeteaseScroll(
-            //   direction: Axis.horizontal,
-            //   child: Row(
-            //     children: <Widget>[
-            //       Container(
-            //         child: Column(
-            //           children: <Widget>[
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //           ],
-            //         ),
-            //       ),
-            //       Container(
-            //         child: Column(
-            //           children: <Widget>[
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //           ],
-            //         ),
-            //       ),
-            //       Container(
-            //         child: Column(
-            //           children: <Widget>[
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //             NeteaseMusicCardEntry(),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
           ),
         ],
       ),

@@ -35,91 +35,54 @@ class NeteaseLabelCard extends StatefulWidget {
         borderRadius = borderRadius;
 
   @override
-  _NeteaseLabelCardState createState() => _NeteaseLabelCardState(
-        left: left,
-        right: right,
-        center: center,
-        height: height,
-        leftSub: leftSub,
-        width: width,
-        padding: padding,
-        color: color,
-        borderRadius: borderRadius,
-      );
+  _NeteaseLabelCardState createState() => _NeteaseLabelCardState();
 }
 
 class _NeteaseLabelCardState extends State<NeteaseLabelCard> {
-  Widget _leftSub;
-  Widget _left;
-  Widget _right;
-  Widget _center;
-
-  double _width;
-  double _height;
-  EdgeInsets _padding;
-  Color _color;
-  BorderRadius _borderRadius;
-
-  _NeteaseLabelCardState({
-    @required Widget leftSub,
-    @required Widget left,
-    @required Widget right,
-    @required Widget center,
-    @required double width,
-    @required double height,
-    @required Color color,
-    @required EdgeInsets padding,
-    @required BorderRadius borderRadius,
-  })  : _leftSub = leftSub,
-        _left = left,
-        _right = right,
-        _center = center,
-        _width = width,
-        _height = height,
-        _padding = padding,
-        _color = color,
-        _borderRadius = borderRadius;
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: _width,
-      height: _height,
-      padding: _padding,
+      width: widget.width,
+      height: widget.height,
+      padding: widget.padding,
       decoration: BoxDecoration(
-        color: _color,
-        borderRadius: _borderRadius,
+        color: widget.color,
+        borderRadius: widget.borderRadius,
         border: Border.all(width: 0, style: BorderStyle.none),
       ),
       child: Column(
         children: <Widget>[
-          Container(
+          widget.leftSub != null ? Container(
             width: double.infinity,
             padding: EdgeInsets.fromLTRB(0, 10.rpx, 0, 0),
-            child: _leftSub,
-          ),
+            child: widget.leftSub,
+          ) : Container(),
           Container(
             child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 0.rpx),
+              margin: EdgeInsets.fromLTRB(0.rpx, 0.rpx, 0.rpx, 15.rpx),
+              alignment: AlignmentDirectional.center,
               child: Row(
                 children: <Widget>[
                   Flexible(
                     child: Container(
                       alignment: AlignmentDirectional.centerStart,
-                      child: _left,
+                      child: widget.left,
                     ),
                   ),
                   Flexible(
                     child: Container(
                       alignment: AlignmentDirectional.centerEnd,
                       padding: EdgeInsets.fromLTRB(0, 5.rpx, 0, 0),
-                      child: _right,
+                      child: widget.right,
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          _center,
+          widget.center,
         ],
       ),
     );

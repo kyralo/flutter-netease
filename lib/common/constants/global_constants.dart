@@ -34,9 +34,6 @@ class GlobalConstants {
     rpx = screenWidth / standardWidth;
     px = screenWidth / standardWidth * 2;
     pec = screenWidth / 100;
-
-    print('values: $statusBarHeight');
-    print('values: $bottomHeight');
   }
 
   // 按照像素来设置
