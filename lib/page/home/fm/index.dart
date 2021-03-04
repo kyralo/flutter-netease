@@ -17,7 +17,7 @@ class _HomeFMState extends State<HomeFM> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 330.rpx,
+      height: 340.rpx,
       padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 0.rpx),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -30,7 +30,7 @@ class _HomeFMState extends State<HomeFM> {
             padding: EdgeInsets.fromLTRB(0.rpx, 10.rpx, 0.rpx, 0.rpx),
             child: SuitText(
               '私人定制',
-              fontSize: 15,
+              fontSize: 15.rpx,
               fontWeight: FontWeight.normal,
               color: Color.fromRGBO(188, 188, 188, 0.8),
               alignment: AlignmentDirectional.bottomStart,
@@ -63,19 +63,19 @@ class _HomeFMState extends State<HomeFM> {
                       padding: EdgeInsets.fromLTRB(0.rpx, 5.rpx, 0.rpx, 0.rpx),
                       child: Container(
                         width: 80.rpx,
-                        padding: EdgeInsets.fromLTRB(5.rpx, 4.rpx, 10.rpx, 4.rpx),
+                        padding: EdgeInsets.fromLTRB(5.rpx, 2.rpx, 6.rpx, 2.rpx),
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(255, 255, 255, 1),
                           borderRadius: BorderRadius.all(Radius.circular(25.rpx)),
                           border: Border.all(
-                              width: 1, color: Color.fromRGBO(243, 243, 243, 1)),
+                              width: 1.rpx, color: Color.fromRGBO(243, 243, 243, 1)),
                         ),
                         child: Row(
                           children: <Widget>[
                             Icon(IconFont.rehin_bofang6),
                             SuitText(
                               '播放',
-                              fontSize: 18.rpx,
+                              fontSize: 15.rpx,
                               fontWeight: FontWeight.normal,
                               color: Color.fromRGBO(0, 0, 0, 1),
                               alignment: AlignmentDirectional.bottomStart,

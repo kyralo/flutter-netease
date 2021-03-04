@@ -21,7 +21,7 @@ class NeteaseSearch extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(20.rpx, 10.rpx, 20.rpx, 10.rpx),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadiusDirectional.circular(25),
+                  borderRadius: BorderRadiusDirectional.circular(25.rpx),
                 ),
                 child: Row(
                   textBaseline: TextBaseline.ideographic,

@@ -65,7 +65,7 @@ Widget buildView(BuildContext context){
   return Scaffold(
     body: pages[state.index],
     bottomNavigationBar: Container(
-      height: 140.2.rpx,
+      height: 160.2.rpx,
       decoration: BoxDecoration(
           border: Border(
               top: BorderSide(width: 0.2.rpx, color: Color.fromRGBO(191,191,191, 1))
@@ -83,7 +83,7 @@ Widget buildView(BuildContext context){
             child: NeteasePlayBar(),
           ),
           Container(
-            height: 80.rpx,
+            height: 100.rpx,
             decoration: BoxDecoration(
               color: Color.fromRGBO(255, 255, 255, 1),
               border: Border.all(width: 0.rpx, style: BorderStyle.none),

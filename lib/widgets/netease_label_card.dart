@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:netease/common/extension/num_fit.dart';
 
 class NeteaseLabelCard extends StatefulWidget {
@@ -21,7 +20,7 @@ class NeteaseLabelCard extends StatefulWidget {
     Widget center, {
     Widget leftSub,
     double width = double.infinity,
-    EdgeInsets padding = const EdgeInsets.fromLTRB(15, 15, 15, 0),
+    EdgeInsets padding,
     Color color = Colors.white,
     BorderRadius borderRadius = const BorderRadius.all(Radius.circular(15)),
   })  : leftSub = leftSub,

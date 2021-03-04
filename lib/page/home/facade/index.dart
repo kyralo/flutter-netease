@@ -49,12 +49,12 @@ class _HomeFacadeState extends State<HomeFacade> {
       child: Column(
         children: <Widget>[
           Container(
-            height: 80,
+            height: 80.rpx,
             padding: EdgeInsets.fromLTRB(15.rpx, 40.rpx, 15.rpx, 0.rpx),
             child: NeteaseSearch(),
           ),
           Container(
-            height: 220,
+            height: 220.rpx,
             padding: EdgeInsets.fromLTRB(15.rpx, 15.rpx, 15.rpx, 0.rpx),
             child: NeteaseCarousel(
               autoplay: true,
@@ -78,7 +78,7 @@ class _HomeFacadeState extends State<HomeFacade> {
             ),
           ),
           Container(
-            height: 120,
+            height: 120.rpx,
             padding: EdgeInsets.fromLTRB(10.rpx, 5.rpx, 10.rpx, 0.rpx),
             // decoration: BoxDecoration(
             //   color: Colors.white,

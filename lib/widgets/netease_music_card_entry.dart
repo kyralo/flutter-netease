@@ -51,7 +51,7 @@ class _NeteaseMusicCardEntryState extends State<NeteaseMusicCardEntry> {
                       Container(
                         margin: EdgeInsets.fromLTRB(5.rpx, 0, 1.rpx, 0),
                         child: Icon(IconFont.rehin_jian,
-                            size: 15, color: Color.fromRGBO(183, 183, 183, 1)),
+                            size: 15.rpx, color: Color.fromRGBO(183, 183, 183, 1)),
                       ),
                       SizedBox(width: 3.rpx),
                       Container(
