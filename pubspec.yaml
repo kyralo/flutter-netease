@@ -16,17 +16,17 @@ dependencies:
   provider: ^4.3.2+4
   # flutter hooks
   flutter_hooks: ^0.15.0
-  # json数据生成实体�?
+  # json数据生成实体
   json_annotation: ^3.1.1
   http: ^0.12.2
   cupertino_icons: any
-  # 可以�? font awesome 官网上找到图标的名字
+  # 可以 font awesome 官网上找到图标的名字
   font_awesome_flutter: 8.10.0
-  # 这个 package 并没有在 Dart Packages �?
+  # 这个 package 并没有在 Dart Packages
   # github: https://github.com/btastic/flutter_native_image
   # flutter_native_image:
   #   git: https://github.com/btastic/flutter_native_image.git
-  #  # 可以�? app 在任务栏显示通知
+  #  # 可以 app 在任务栏显示通知
   #  flutter_local_notifications: 3.0.2
   #
   #  # 可以更优雅的显示图片
@@ -35,24 +35,24 @@ dependencies:
   #  # 从相册中或相机中获取图片
   #  image_picker: 0.6.7+14
   #
-  #  # 可以调用浏览器访问一跳网�?
+  #  # 可以调用浏览器访问一跳网
   #  url_launcher: 5.7.10
   # http 请求
   dio: 3.0.10
-  # 这个插件为android和ios平台提供了简单的记录器和播放器功�?
+  # 这个插件为android和ios平台提供了简单的记录器和播放器功
   #  flutter_sound: any
-  # flutter�?强大的siwiper, 多种布局方式，无限轮播，Android和IOS双端适配.
+  # flutter强大的siwiper, 多种布局方式，无限轮播，Android和IOS双端适配.
   flutter_swiper: 1.1.6
   # 保存图片
   # image_gallery_saver: 1.6.7
   # 音频播放
   audioplayers: 0.16.1
   # 视频播放
-  chewie: ^0.12.0
-  video_player: 1.0.1
-  # �?
+  chewie: 1.0.0
+  video_player: 2.1.1
+  #
   liquid_swipe: ^1.5.0
-  # 底部导航�?
+  # 底部导航
   bottom_navy_bar: ^5.6.0
   # 图片颜色提取
   color_thief_flutter: ^1.0.2
@@ -62,9 +62,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  #json数据生成实体�?
+  #json数据生成实体
   build_runner: ^1.10.9
-  #json数据生成实体�?
+  #json数据生成实体
   json_serializable: ^3.5.1
 
 flutter:

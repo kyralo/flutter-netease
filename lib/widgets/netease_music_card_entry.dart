@@ -43,6 +43,7 @@ class _NeteaseMusicCardEntryState extends State<NeteaseMusicCardEntry> {
                   width: double.infinity,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Container(
                         child: SuitText(widget.title, fontSize: 20.rpx, fontWeight: FontWeight.normal),

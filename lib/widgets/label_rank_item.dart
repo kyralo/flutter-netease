@@ -14,6 +14,7 @@ class LabelRankItem extends StatelessWidget {
       height: 85.rpx,
       padding: EdgeInsets.fromLTRB(10.rpx, 5.rpx, 10.rpx, 5.rpx),
       child: Row(
+        textBaseline: TextBaseline.alphabetic,
         children: <Widget>[
           ItemCover('lib/assets/image/p1.jpg', 75.rpx, 75.rpx),
           Container(
@@ -31,16 +32,22 @@ class LabelRankItem extends StatelessWidget {
                   width: double.infinity,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Container(
                         child: SuitText('1', fontSize: 20.rpx, fontWeight: FontWeight.normal),
                       ),
                       SizedBox(width: 3.rpx),
                       Container(
-                        // constraints: BoxConstraints(
-                        //   minWidth: 120,
-                        // ),
-                        child: SuitText('空城', fontSize: 20.rpx, fontWeight: FontWeight.normal),
+                        constraints: BoxConstraints(
+                          maxWidth: 120,
+                        ),
+                        child: SuitText('空城',
+                          fontSize: 20.rpx,
+                          fontWeight: FontWeight.normal,
+                          maxLines: 1,
+                          alignment: AlignmentDirectional.centerStart,
+                        ),
                       ),
                       SizedBox(width: 3.rpx),
                       Container(
@@ -50,12 +57,14 @@ class LabelRankItem extends StatelessWidget {
                       ),
                       SizedBox(width: 3.rpx),
                       Container(
-                        // constraints: BoxConstraints(
-                        //   minWidth: 30,
-                        // ),
+                        constraints: BoxConstraints(
+                          maxWidth: 30,
+                        ),
                         child: SuitText('杨坤',
                             fontSize: 13.rpx,
                             fontWeight: FontWeight.normal,
+                            maxLines: 1,
+                            alignment: AlignmentDirectional.centerStart,
                             color: Color.fromRGBO(183, 183, 183, 1)),
                       ),
                     ],

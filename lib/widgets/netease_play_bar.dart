@@ -56,6 +56,7 @@ class _NeteasePlayBarState extends State<NeteasePlayBar> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       mainAxisAlignment: MainAxisAlignment.start,
+                      textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
                         Container(
                           child: SuitText(

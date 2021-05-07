@@ -16,7 +16,7 @@ class _HomeRankingState extends State<HomeRanking> {
   @override
   Widget build(BuildContext context) {
     return NeteaseLabelCard(
-      600.rpx,
+      460.rpx,
       SuitText(
         '排行榜',
         alignment: AlignmentDirectional.bottomStart,

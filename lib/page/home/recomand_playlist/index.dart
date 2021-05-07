@@ -58,6 +58,7 @@ class _HomeRecomandPlaylistState extends State<HomeRecomandPlaylist> {
         ),
       ),
       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
     );
   }
 }
